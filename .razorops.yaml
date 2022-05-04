@@ -4,4 +4,9 @@ tasks:
     steps:
     - git --version
     - checkout
-    - echo "Hello World"
+    - cache/pull:
+        key: maven-repo-{{ checksum "pom.xml" }}
+        fallback_key: maven-repo-
+
+    - run: mvn -q clean package
+    - run: mvn clean test
