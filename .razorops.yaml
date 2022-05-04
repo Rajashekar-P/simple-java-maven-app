@@ -3,5 +3,4 @@ tasks:
     runner: razorci/openjdk
     steps:
     - checkout
-    - commands:
-      - java --version
+    echo "Hello World!"
