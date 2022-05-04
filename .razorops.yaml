@@ -1,6 +1,6 @@
 tasks:
   hello-job:
-    runner: razorci/openjdk:<version>
+    runner: razorci/openjdk:11-buster
     steps:
     - git --version
     - checkout
