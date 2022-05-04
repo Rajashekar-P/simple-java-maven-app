@@ -1,6 +1,7 @@
 tasks:
-  build-deps:
-    runner: razorci/openjdk
+  hello-job:
+    runner: razorci/openjdk:<version>
     steps:
+    - git --version
     - checkout
-    - echo "Hello World!"
+    - echo "Hello World"
