@@ -1,6 +1,7 @@
 tasks:
   build-deps:
     runner: razorci/openjdk
+    runner: razorci/maven:3-alpine
     steps:
     - checkout
     - commands:
