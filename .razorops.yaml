@@ -1,0 +1,8 @@
+tasks:
+  build-deps:
+    runner: razorci/openjdk
+    steps:
+    - checkout
+    - commands:
+      - mvn dependency:go-offline # gets the project dependencies
+      - mvn package
