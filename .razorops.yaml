@@ -8,7 +8,6 @@ tasks:
         fallback_key: maven-repo-
 
     - run: mvn -q clean package
-    ...
     - cache/push:
         key: maven-repo-{{ checksum "pom.xml" }}
         paths:
