@@ -1,9 +1,15 @@
 tasks:
   build-deps:
     runner: razorci/openjdk
-    runner: razorci/maven:3-alpine
     steps:
     - checkout
-    - commands:
-      - mvn dependency:go-offline # gets the project dependencies
-      - mvn package
+    - cache/pull:
+        key: maven-repo-{{ checksum "pom.xml" }}
+        fallback_key: maven-repo-
+
+    - run: mvn -q clean package
+    ...
+    - cache/push:
+        key: maven-repo-{{ checksum "pom.xml" }}
+        paths:
+        - ~/.m2
