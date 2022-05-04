@@ -3,4 +3,4 @@ tasks:
     runner: razorci/openjdk
     steps:
     - checkout
-    echo "Hello World!"
+    - echo "Hello World!"
